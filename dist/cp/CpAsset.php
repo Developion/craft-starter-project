@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace ContentReactor\web\assets\cp;
+namespace Developion\web\assets\cp;
 
-use ContentReactor\web\assets\font\FontAsset;
+use Developion\web\assets\font\FontAsset;
 use craft\web\AssetBundle;
 
 /**

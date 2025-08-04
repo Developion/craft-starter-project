@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace ContentReactor\traits;
+namespace Developion\SitePlugin\Traits;
 
-use ContentReactor\services\Bundles;
+use Developion\SitePlugin\services\Bundles;
 
 /**
  * @mixin Plugin

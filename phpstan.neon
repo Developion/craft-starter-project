@@ -1,0 +1,21 @@
+includes:
+  - vendor/marcusgaius/phpstan/phpstan.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - plugins/module/phpstan.neon
+parameters:
+  strictRules:
+    allRules: false
+  level: 6
+  ignoreErrors:
+    -
+      identifier: method.templateTypeNotInParameter
+  stubFiles:
+    - stubs/craftcms/cms/services/Elements.stub
+  scanFiles:
+    - vendor/yiisoft/yii2/Yii.php
+    - vendor/craftcms/cms/src/Craft.php
+    - vendor/craftcms/cms/src/services/Elements.php
+  scanDirectories:
+    - %currentWorkingDirectory%/storage/runtime/compiled_classes/
+  excludePaths:
+    - vendor/**/*

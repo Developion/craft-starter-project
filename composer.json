@@ -1,11 +1,11 @@
 {
-  "name": "contentreactor/craft",
-  "description": "Content Reactor Craft CMS",
+  "name": "developion/craft",
+  "description": "A Craft CMS starter package",
   "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "contentreactor/contentreactor": "dev-main",
+    "developion/site-plugin": "^1.0.0",
     "craftcms/ckeditor": "^4.9.0",
     "craftcms/cms": "^5.0.0",
     "nystudio107/craft-code-field": "^5.0.1",
@@ -14,7 +14,10 @@
   },
   "require-dev": {
     "craftcms/generator": "^2.0.0",
-    "yiisoft/yii2-shell": "^2.0.3"
+    "yiisoft/yii2-shell": "^2.0.3",
+    "marcusgaius/phpstan": "^1.0",
+    "friendsofphp/php-cs-fixer": "^3.54",
+    "developion/coding-standards": "^1.1"
   },
   "config": {
     "allow-plugins": {
@@ -29,18 +32,30 @@
   },
   "autoload": {
     "psr-4": {
-      "ContentReactor\\web\\assets\\": "dist/"
+      "Developion\\web\\assets\\": "dist/"
     }
   },
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
-    ]
+    ],
+    "phpstan": "phpstan --memory-limit=2G",
+		"check-cs": "php-cs-fixer check --diff --ansi --using-cache=no",
+		"fix-cs": "php-cs-fixer fix --diff --ansi --using-cache=no"
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "plugins/contentreactor"
-    }
-  ]
+	"repositories": [
+		{
+			"type": "path",
+			"url": "plugins/**"
+		},
+		{
+			"type": "composer",
+			"url": "https://composer.craftcms.com",
+			"canonical": false
+		},
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
 }

@@ -17,6 +17,8 @@ return GeneralConfig::create()
     ->defaultWeekStartDay(1)
     // Prevent generated URLs from including "index.php"
     ->omitScriptNameInUrls()
+    ->devMode(App::env('DEV_MODE') ?? false)
+    ->allowAdminChanges(App::env('ALLOW_ADMIN_CHANGES') ?? false)
     // Preload Single entries as Twig variables
     ->preloadSingles()
     // Prevent user enumeration attacks
@@ -25,6 +27,7 @@ return GeneralConfig::create()
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
     ])
-    // ->cpTrigger('admin-panel')
-    // ->loginPath(false)
+    ->cpTrigger('admin-panel')
+    ->actionTrigger('developionActions')
+    ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
 ;

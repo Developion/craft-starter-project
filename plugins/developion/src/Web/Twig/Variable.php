@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace ContentReactor\web\twig;
+namespace Developion\SitePlugin\Web\Twig;
 
-use ContentReactor\Plugin;
+use Developion\SitePlugin\Plugin;
 
 class Variable
 {

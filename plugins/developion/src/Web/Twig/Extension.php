@@ -1,9 +1,9 @@
 <?php
 
-namespace ContentReactor\web\twig;
+namespace Developion\SitePlugin\Web\Twig;
 
-use ContentReactor\web\assets\font\FontAsset;
-use ContentReactor\web\assets\front\FrontAsset;
+use Developion\web\assets\font\FontAsset;
+use Developion\web\assets\front\FrontAsset;
 use Craft;
 use craft\base\ElementInterface;
 use Twig\Extension\AbstractExtension;

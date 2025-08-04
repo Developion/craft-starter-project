@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ContentReactor\web\assets\font;
+namespace Developion\web\assets\font;
 
 use craft\web\AssetBundle;
 

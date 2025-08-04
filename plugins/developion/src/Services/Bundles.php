@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ContentReactor\services;
+namespace Developion\SitePlugin\Services;
 
 use Craft;
 use Exception;

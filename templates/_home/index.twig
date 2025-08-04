@@ -7,4 +7,4 @@
 	{{ include('contentBuilder') }}
 {% endblock %}
 
-{% do craft.cr.registerAsset(frontAsset, 'css/pages/home.css') %}
+{% do craft.sitePlugin.registerAsset(frontAsset, 'css/pages/home.css') %}

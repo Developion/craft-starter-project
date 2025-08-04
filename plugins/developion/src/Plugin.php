@@ -1,25 +1,25 @@
 <?php
 
-namespace ContentReactor;
+namespace Developion\SitePlugin;
 
-use ContentReactor\services\Bundles;
-use ContentReactor\traits\Services;
-use ContentReactor\web\assets\cp\CpAsset;
-use ContentReactor\web\twig\Variable;
+use Developion\SitePlugin\Services\Bundles;
+use Developion\SitePlugin\Traits\Services;
+use Developion\web\assets\cp\CpAsset;
+use Developion\SitePlugin\Web\Twig\Variable;
 use Craft;
 use yii\base\Event;
 use craft\base\Plugin as BasePlugin;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
-use ContentReactor\web\twig\Extension;
+use Developion\SitePlugin\Web\Twig\Extension;
 use Squirrel\TwigPhpSyntax\PhpSyntaxExtension;
 
 /**
- * ContentReactor
+ * SitePlugin
  *
  * @method static Plugin getInstance()
- * @author Content Reactor
- * @copyright Content Reactor
+ * @author Developion
+ * @copyright Developion
  * @license MIT
  */
 class Plugin extends BasePlugin
@@ -38,8 +38,8 @@ class Plugin extends BasePlugin
     }
 
     public function init(): void
-    {
-        Craft::setAlias('@ContentReactor', __DIR__);
+    {   
+        Craft::setAlias('@SitePlugin', __DIR__);
 
         parent::init();
 
@@ -74,7 +74,7 @@ class Plugin extends BasePlugin
 			static function (Event $event) {
 				/** @var CraftVariable $variable */
 				$variable = $event->sender;
-				$variable->set('cr', Variable::class);
+				$variable->set('sitePlugin', Variable::class);
 			}
 		);
     }

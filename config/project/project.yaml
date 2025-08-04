@@ -1,4 +1,4 @@
-dateModified: 1754242615
+dateModified: 1754318811
 email:
   fromEmail: admin@contentreactor.com
   fromName: 'Content Reactor Craft'
@@ -62,6 +62,10 @@ meta:
     f03bf07d-6234-40d9-abb4-68a8591d8136: Documents # Documents
     fd4aa143-fc8c-48c6-8681-8d5383670be3: Image # Image
 plugins:
+  _site-plugin:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   ckeditor:
     edition: standard
     enabled: true
