@@ -1,0 +1,10 @@
+{% extends 'layouts/base.twig' %}
+
+{% block editLink %}{{ editElement(entry) }}{% endblock %}
+
+{% block content %}
+	<h1 class="off-screen">{{ entry.title }}</h1>
+	{{ include('contentBuilder') }}
+{% endblock %}
+
+{% do craft.cr.registerAsset(frontAsset, 'css/pages/home.css') %}

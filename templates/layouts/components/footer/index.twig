@@ -1,0 +1,5 @@
+    {% for code in codeSnippets.bodyBottomSnippets.all() %}
+		{{ code.snippet.value|raw }}
+	{% endfor %}
+    </body>
+</html>

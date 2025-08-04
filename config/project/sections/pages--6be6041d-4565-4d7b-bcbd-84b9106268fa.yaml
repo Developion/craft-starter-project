@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 3160ca85-7aff-4ce6-a9cf-8fc47ff0f26c # Page
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  11284eb7-3a0f-4b0a-9c26-0ff426879b06: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/index.twig
+    uriFormat: '{parent.uri}/{slug}'
+type: channel

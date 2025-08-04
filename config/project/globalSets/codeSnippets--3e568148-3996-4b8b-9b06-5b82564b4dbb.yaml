@@ -1,0 +1,53 @@
+fieldLayouts:
+  325bb56f-362c-4fb8-8bc6-571ec76bb08d:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-03T17:35:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c7e65717-cea4-4e1e-af12-bbd562fbd6d5 # Head Snippets
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41e96a0c-7992-4cff-aa0e-7b6293c09f2e
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Head Snippets'
+        uid: dff5dfae-c88b-4448-90e7-5cb5be5538fc
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-03T17:35:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 24d986c7-fbb1-494b-9b9f-6a63816b8302 # Body Bottom Snippets
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d0c5e24-8ea1-48d7-a552-e10c397e51c1
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Body Bottom'
+        uid: ac0acbaa-8d86-492b-ab6c-1bf5f543618a
+        userCondition: null
+handle: codeSnippets
+name: ' Code Snippets'
+sortOrder: 1

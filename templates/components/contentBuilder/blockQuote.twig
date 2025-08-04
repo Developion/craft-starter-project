@@ -1,0 +1,54 @@
+{# {% from macros import svgIcon %} #}
+
+{% set color = node.color ?? '' %}
+{% set skinClass = color == 'dark' ? 'skin--dark' : 'skin--light' %}
+{% set typeClass = node.image.one() ? 'type--with-image' : 'type--no-image' %}
+
+<section class="quote-section-wrapper content-grid {{ skinClass }} {{ typeClass }}">
+    <div class="quote-section-inner medium">
+        <div class="quote-icon-wrapper">
+	        {# <div class="quote-icon"  role="img" aria-label="quote icon">{{ svgIcon('quote') }}</div> #}
+	        <div class="quote-line"></div>
+        </div>
+        <div class="content-wrapper">
+            {% if node.image.one() %}
+                <div class="image-wrapper">
+                    <picture>
+                        <source srcset="{{ node.image.one().getUrl('') }}" type="image/webp"/>
+                        <source srcset="{{ node.image.one().getUrl('') }}" type="image/png"/>
+                        {{ node.image.one().getImg('')|attr({
+                            alt: node.image.one().alternativeText ?? 'Quote image'|t,
+                            loading: _globals.get('loading') == 'lazy' ? 'lazy' : 'eager',
+                        }) }}
+                    </picture>
+                </div>
+            {% endif %}
+            <div class="text-wrapper">
+                {{ include('components/common/rich-text', {
+					content: node.quote,
+					additionalClass: 'quote-text'
+				}) }}
+                {{ include('components/common/rich-text', {
+					content: node.signature,
+					additionalClass: 'signature'
+				}) }}
+                {% if node.logos.one() %}
+                    <div class="quote-logos-wrapper">
+                        {% for logo in node.logos.all() %}
+                            <div class="quote-logo">
+                                <picture>
+                                    <source srcset="{{ logo.getUrl('') }}" type="image/webp" />
+                                    <source srcset="{{ logo.getUrl('') }}" type="image/png" />
+                                    {{ logo.getImg('')|attr({
+										alt: logo.alternativeText ?? 'Logo image ' ~ loop.index|t,
+										loading: _globals.get('loading') == 'lazy' ? 'lazy' : 'eager',
+                                    }) }}
+                                </picture>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ currentSite.language }}">
+	<head>
+		{% set title = title is defined ? title ~ ' - ' : (entry is defined ? entry.title|striptags ~ ' - ' : '') %}
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% do craft.app.view.registerAssetBundle(frontAsset) %}
+		<link rel="icon" type="image/png" href="/media/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
+		<link rel="shortcut icon" href="/media/favicon/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+		<link rel="manifest" href="/media/favicon/site.webmanifest" />
+		{% hook 'plausible' %}
+
+		{% for code in codeSnippets.headSnippets.all() %}
+			{{ code.snippet.value|raw }}
+		{% endfor %}
+	</head>
+	<body class="{{ classListBody }}">
+		<div class="header-holder">
+			{{ include('layouts/components/header')  }}
+			{{ csrfInput({id: 'CRAFT_CSRF_TOKEN'}) }}
+		</div>

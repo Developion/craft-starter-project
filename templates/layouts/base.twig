@@ -1,0 +1,9 @@
+{% set classListBody = block('classListBody') ?? '' %}
+{% set classListHeader = block('classListHeader') ?? '' %}
+{% set classListMain = block('classListMain') ?? '' %}
+
+{{ include('layouts/components/head.twig')  }}
+<main id="main-content" class="{% block classListMain %}{% endblock %}">
+    {% block content %}{% endblock %}
+</main>
+{{ include('layouts/components/footer') }}

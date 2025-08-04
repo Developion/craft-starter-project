@@ -1,0 +1,7 @@
+{% set additionalClass = additionalClass ?? '' %}
+
+{% if content %}
+	<div class="rich-text {{ additionalClass }}">
+		{{ content|raw }}
+	</div>
+{% endif %}

@@ -1,0 +1,9 @@
+{% extends 'layouts/base.twig' %}
+{% do eagerLoad(entry, [
+]) %}
+
+{% block editLink %}{{ editElement(entry) }}{% endblock %}
+
+{% block content %}
+	{{ include('contentBuilder')  }}
+{% endblock %}

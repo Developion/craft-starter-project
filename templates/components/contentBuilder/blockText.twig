@@ -1,0 +1,9 @@
+{% if node.text | length > 0 %}
+	<section class="text-section-wrapper content-grid">
+		<div class="text-section-inner content">
+			{{ include('components/common/rich-text', {
+				content: node.text,
+			}) }}
+		</div>
+	</section>
+{% endif %}

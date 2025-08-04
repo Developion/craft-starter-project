@@ -1,0 +1,41 @@
+{% set image = image ?? null %}
+{% set caption = caption ?? null %}
+{% set isLarge = isLarge ?? false %}
+{% set largeClass = isLarge == true ? 'size--large' : '' %}
+
+{% if image %}
+	{% set altText = image.alternativeText ?? 'image'|t %}
+	{% set loadingMode = _globals.get('loading') == 'lazy' ? 'lazy' : 'eager' %}
+	{% set imgAttributes = {
+		alt: altText,
+		loading: loadingMode,
+		class: 'image--rounded'
+	} %}
+	<div class="image-wrapper {{ largeClass }}">
+		<picture>
+			{# Mobile sources (same in both cases) #}
+			<source srcset="{{ image.getUrl('imageWebpMobile') }}" type="image/webp" media="(max-width: 480px)" />
+			<source srcset="{{ image.getUrl('imagePngMobile') }}" type="image/png" media="(max-width: 480px)" />
+
+			{# Conditional large vs standard sources #}
+			{% if isLarge %}
+				<source srcset="{{ image.getUrl('imageLargeWebp') }}" type="image/webp" media="(min-width: 481px)" />
+				<source srcset="{{ image.getUrl('imageLargePng') }}" type="image/png" media="(min-width: 481px)" />
+			{% else %}
+				<source srcset="{{ image.getUrl('imageLargeWebp') }}" type="image/webp" media="(max-width: 1200px)" />
+				<source srcset="{{ image.getUrl('imageLargePng') }}" type="image/png" media="(max-width: 1200px)" />
+				<source srcset="{{ image.getUrl('imageWebp') }}" type="image/webp" media="(min-width: 1201px)" />
+				<source srcset="{{ image.getUrl('imagePng') }}" type="image/png" media="(min-width: 1201px)" />
+			{% endif %}
+
+			{{ image.getImg('imageLargeWebp')|attr(imgAttributes) }}
+		</picture>
+
+		{% if caption %}
+			<div class="caption">{{ caption }}</div>
+		{% endif %}
+	</div>
+{% endif %}
+
+
+{# {% do craft.cr.registerAsset(frontAsset, 'css/components/common/image.css') %} #}

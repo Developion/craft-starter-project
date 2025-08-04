@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: headSnippets
+instructions: null
+name: 'Head Snippets'
+searchable: false
+settings:
+  createButtonLabel: 'New Code'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 2cc9f560-eb80-4651-a2f9-3e636c7e1346 # Code
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

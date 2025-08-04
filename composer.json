@@ -1,0 +1,46 @@
+{
+  "name": "contentreactor/craft",
+  "description": "Content Reactor Craft CMS",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "contentreactor/contentreactor": "dev-main",
+    "craftcms/ckeditor": "^4.9.0",
+    "craftcms/cms": "^5.0.0",
+    "nystudio107/craft-code-field": "^5.0.1",
+    "squirrelphp/twig-php-syntax": "^1.9",
+    "vlucas/phpdotenv": "^5.4.0"
+  },
+  "require-dev": {
+    "craftcms/generator": "^2.0.0",
+    "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.2"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "ContentReactor\\web\\assets\\": "dist/"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
+    ]
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "plugins/contentreactor"
+    }
+  ]
+}

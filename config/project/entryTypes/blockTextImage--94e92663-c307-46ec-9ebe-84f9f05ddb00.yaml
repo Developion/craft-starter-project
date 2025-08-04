@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  95f9feee-5493-48b0-bdca-464ddd4f17bd:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-01T08:57:17+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 918673e2-c882-44b9-b2ce-b7721c844900 # Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 947060b1-4880-4ddd-b671-3c93c6394a64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-01T08:57:17+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 848cfe22-21e5-4034-bc6e-d5ba7d045860 # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85a7c8e5-041a-41d1-b4c4-3fa41994e3d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-01T08:57:17+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1fe26970-c003-47c3-a6b9-902f906507d0 # Heading
+            handle: imageCaption
+            includeInCards: false
+            instructions: null
+            label: 'Image Caption'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fdc1ef37-78ca-4d7e-bb1b-287c7e8eaeee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4b3b0f10-0360-4965-80eb-0beacbb81db8
+        userCondition: null
+handle: blockTextImage
+hasTitleField: false
+icon: images
+name: 'Text Image'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

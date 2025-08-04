@@ -1,0 +1,11 @@
+fill: null
+format: png
+handle: imagePngMobile
+height: 278
+interlace: none
+mode: fit
+name: 'Image Png - Mobile'
+position: center-center
+quality: 80
+upscale: true
+width: 448

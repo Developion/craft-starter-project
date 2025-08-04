@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: imageWebpMobile
+height: 278
+interlace: none
+mode: fit
+name: 'Image Webp - Mobile'
+position: center-center
+quality: 80
+upscale: true
+width: 448

@@ -1,0 +1,23 @@
+<div class="cms-wrapper">
+	{% for content in entry.contentBuilder %}
+		{% if content.level > 1 %}{% continue %}{% endif %}
+		{% set backgroundColor = 'bg-white' %}
+		{% set containerWidth = 'normal' %}
+		{% if content.type == 'blockComponent' and content.blockComponent.one() %}
+			{% do _globals.put('loading', loop.index > 2 ? 'lazy' : 'eager') %}
+			{% do _globals.put('isFirst', loop.index == 1) %}
+			<section class="block-component block-rich-text {{ backgroundColor }}">
+				{{ editComponent(content.blockComponent.one()) }}
+				{{ include('components/contentBuilder/' ~ content.blockComponent.one().type, {
+					node: content.blockComponent.one(),
+				}) }}
+			</section>
+		{% else %}
+			{{ include('components/contentBuilder/' ~ content.type.handle, {
+				node: content,
+				backgroundColor: 'bg-white',
+				containerWidth: 'normal',
+			}) }}
+		{% endif %}
+	{% endfor %}
+</div>

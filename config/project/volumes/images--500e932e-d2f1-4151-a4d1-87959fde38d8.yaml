@@ -1,0 +1,68 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  8af42651-524a-429b-adc1-9976a84008f6:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-31T14:35:59+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: f8097280-0599-4294-81f1-0f9a7c0be5e1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-01T10:13:19+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1d483cb7-a260-4fc2-992f-85c75c9994d2 # Plain Text
+            handle: alternativeText
+            includeInCards: false
+            instructions: null
+            label: 'Alternative Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2953a59-bbbb-4008-8b57-774e16dc2447
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 284e18eb-afd8-4c73-8bf2-cff7bc1e7256
+        userCondition: null
+fs: assets
+handle: images
+name: Images
+sortOrder: 1
+subpath: images
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: transforms
+transformSubpath: images

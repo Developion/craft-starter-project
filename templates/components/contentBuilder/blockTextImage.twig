@@ -1,0 +1,21 @@
+{# Settings tab #}
+{% set color = node.color ?? '' %}
+{% set skinClass = color == 'dark' ? 'skin--dark' : 'skin--light' %}
+{# {% set alignment = node.alignment ?? '' %} #}
+{% set alignmentValue = alignment.value ?? '' %}
+{% set layoutClass = alignmentValue == 'imageRight' ? 'layout--default' : 'layout--reverse' %}
+
+<section class="text-image-wrapper content-grid {{ layoutClass }} {{ skinClass }}">
+	<div class="text-image-inner wide">
+		{{ include('components/common/rich-text', {
+			content: node.text,
+			additionalClass: 'text-content'
+		}) }}
+		{{ include('components/common/image', {
+			image: node.image.one(),
+			caption: node.imageCaption ?? node.image.one().caption
+		}) }}
+	</div>
+</section>
+
+{% do craft.cr.registerAsset(frontAsset, 'css/components/text-image.css') %}

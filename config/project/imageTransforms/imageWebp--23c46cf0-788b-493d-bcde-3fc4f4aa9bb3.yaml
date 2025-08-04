@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: imageWebp
+height: 446
+interlace: none
+mode: fit
+name: 'Image Webp'
+position: center-center
+quality: 80
+upscale: true
+width: 720

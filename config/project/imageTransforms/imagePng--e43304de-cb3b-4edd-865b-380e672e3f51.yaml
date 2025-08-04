@@ -1,0 +1,11 @@
+fill: null
+format: png
+handle: imagePng
+height: 446
+interlace: none
+mode: fit
+name: 'Image Png'
+position: center-center
+quality: 80
+upscale: true
+width: 720

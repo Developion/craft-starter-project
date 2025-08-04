@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  40a01972-db04-4fcc-be60-c7fe73350f48:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-01T08:59:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1fe26970-c003-47c3-a6b9-902f906507d0 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df1ab7d8-200f-42c4-ab97-e1744d377d10
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-01T08:59:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 918673e2-c882-44b9-b2ce-b7721c844900 # Text
+            handle: leftText
+            includeInCards: false
+            instructions: null
+            label: 'Left Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1bc45ecd-e2ff-4b7d-be01-4b70ac8b0ec6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-08-01T08:59:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 918673e2-c882-44b9-b2ce-b7721c844900 # Text
+            handle: rightText
+            includeInCards: false
+            instructions: null
+            label: 'Right Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c46941e3-ada6-4fd8-9be1-a76f7ed4049b
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 1fcd744f-a025-41df-9dc8-a40e5c9ae614
+        userCondition: null
+handle: blockTwoColumns
+hasTitleField: false
+icon: table-columns
+name: 'Two Columns'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

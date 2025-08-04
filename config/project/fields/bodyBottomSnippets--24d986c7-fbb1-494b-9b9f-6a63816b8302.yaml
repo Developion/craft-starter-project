@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: bodyBottomSnippets
+instructions: null
+name: 'Body Bottom Snippets'
+searchable: false
+settings:
+  createButtonLabel: 'New Code'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - ac304521-fdfd-46c1-a193-ebd9b6abf8a1 # Body Code
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

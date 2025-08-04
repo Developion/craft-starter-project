@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/home.css"],"names":[],"mappings":"AAAA;IACI,aAAa;AACjB","file":"home.css","sourcesContent":[".off-screen {\n    display: none;\n}"]}

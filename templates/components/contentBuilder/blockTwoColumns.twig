@@ -1,0 +1,36 @@
+{# {% from macros import svgIcon %} #}
+
+{# Settings tab #}
+{% set color = node.color ?? '' %}
+{% set skinClass = color == 'dark' ? 'skin--dark' : 'skin--light' %}
+
+<section class="two-columns-wrapper content-grid {{ skinClass }}">
+	<div class="two-columns-inner medium">
+		{{ include('components/common/rich-text', {
+				content: node.heading,
+				additionalClass: 'heading'
+		}) }}
+		<div class="main-text-wrapper">
+			{% if node.leftText | length > 0 %}
+				<div class="left-text-wrapper">
+					{{ include('components/common/rich-text', {
+						content: node.leftText,
+						additionalClass: 'text-content'
+					}) }}
+				</div>
+			{% endif %}
+			{% if node.rightText|length > 0 %}
+				<div class="right-text-wrapper">
+					{{ include('components/common/rich-text',  {
+						content: node.rightText,
+						additionalClass: 'text-content'
+					}) }}
+				</div>
+			{% endif %}
+		</div>
+		<button class="read-more">
+				<span>{{ 'Read More'|t }}</span>
+				{# <span aria-label="button icon">{{ svgIcon('arrow-down') }}</span> #}
+        </button>
+	</div>
+</section>

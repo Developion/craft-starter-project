@@ -1,0 +1,22 @@
+color: null
+description: null
+fieldLayouts:
+  435717a6-9741-44f0-9f3f-c6e028b95e18:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: 1201abb5-f5d1-4770-9e55-a379cf0d05c6
+        userCondition: null
+handle: blockSpacer
+hasTitleField: false
+icon: ruler-combined
+name: Spacer
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

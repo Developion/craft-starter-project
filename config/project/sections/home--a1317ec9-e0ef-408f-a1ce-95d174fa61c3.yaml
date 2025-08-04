@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 9f072c48-2335-4a1a-b9fa-2a1dab401231 # Home
+handle: home
+maxAuthors: 1
+name: Home
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  11284eb7-3a0f-4b0a-9c26-0ff426879b06: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _home/index.twig
+    uriFormat: __home__
+type: single
