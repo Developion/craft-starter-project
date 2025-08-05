@@ -4,6 +4,7 @@
   "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "license": "MIT",
   "require": {
     "developion/site-plugin": "^1.0.0",
     "craftcms/ckeditor": "^4.9.0",
