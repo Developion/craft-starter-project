@@ -8,8 +8,7 @@ require 'vendor/autoload.php';
 
 $finder = (new Finder())
 	->in([
-		__DIR__ . '/plugins/module',
-		__DIR__ . '/modules',
+		__DIR__ . '/plugins/developion',
 	])
 	->ignoreDotFiles(false)
 	->ignoreVCSIgnored(true)

@@ -33,12 +33,15 @@
   },
   "autoload": {
     "psr-4": {
-      "Developion\\web\\assets\\": "dist/"
+      "Developion\\SitePlugin\\web\\assets\\": "dist/"
     }
   },
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
+      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "@php craft install"
     ],
     "phpstan": "phpstan --memory-limit=2G",
 		"check-cs": "php-cs-fixer check --diff --ansi --using-cache=no",

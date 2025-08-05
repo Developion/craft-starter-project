@@ -1,16 +1,21 @@
 <?php
+declare(strict_types=1);
 
 namespace Developion\SitePlugin\Web\Twig;
 
-use Developion\web\assets\font\FontAsset;
-use Developion\web\assets\front\FrontAsset;
 use Craft;
 use craft\base\ElementInterface;
-use Twig\Extension\AbstractExtension;
-use Twig\Extension\GlobalsInterface;
-use Twig\TwigFilter;
-use Twig\TwigFunction;
-use Twig\TwigTest;
+use Developion\SitePlugin\web\assets\font\FontAsset;
+use Developion\SitePlugin\web\assets\front\FrontAsset;
+use Twig\{
+	TwigFilter,
+	TwigFunction,
+	TwigTest,
+};
+use Twig\Extension\{
+	AbstractExtension,
+	GlobalsInterface,
+};
 
 /**
  * Twig extension

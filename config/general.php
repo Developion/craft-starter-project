@@ -27,7 +27,7 @@ return GeneralConfig::create()
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
     ])
-    ->cpTrigger('admin-panel')
-    ->actionTrigger('developionActions')
+    ->cpTrigger(App::env('CP_TRIGGER') ?? 'admin')
+    ->actionTrigger(App::env('ACTION_TRIGGER') ?? 'actions')
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
 ;

@@ -1,19 +1,22 @@
 <?php
+declare(strict_types=1);
 
 namespace Developion\SitePlugin;
 
-use Developion\SitePlugin\Services\Bundles;
-use Developion\SitePlugin\Traits\Services;
-use Developion\web\assets\cp\CpAsset;
-use Developion\SitePlugin\Web\Twig\Variable;
 use Craft;
-use yii\base\Event;
 use craft\base\Plugin as BasePlugin;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
-use Developion\SitePlugin\Web\Twig\Extension;
+use Developion\SitePlugin\Services\Bundles;
+use Developion\SitePlugin\Traits\Services;
+use Developion\SitePlugin\Web\Twig\{
+	Extension,
+	Variable,
+};
+use Developion\SitePlugin\Web\assets\cp\CpAsset;
 use Squirrel\TwigPhpSyntax\PhpSyntaxExtension;
+use yii\base\Event;
 
 /**
  * SitePlugin
@@ -25,41 +28,41 @@ use Squirrel\TwigPhpSyntax\PhpSyntaxExtension;
  */
 class Plugin extends BasePlugin
 {
-    use Services;
+	use Services;
 
-    public string $schemaVersion = '1.0.0';
+	public string $schemaVersion = '1.0.0';
 
-    public static function config(): array
-    {
-        return [
-            'components' => [
-                'bundles' => Bundles::class
-            ],
-        ];
-    }
+	public static function config(): array
+	{
+		return [
+			'components' => [
+				'bundles' => Bundles::class,
+			],
+		];
+	}
 
-    public function init(): void
-    {   
-        Craft::setAlias('sitePlugin', __DIR__);
+	public function init(): void
+	{
+		Craft::setAlias('sitePlugin', __DIR__);
 
-        parent::init();
+		parent::init();
 
-        $this->attachEventHandlers();
+		$this->attachEventHandlers();
 
-        Craft::$app->onInit(function() {
-            if (!Craft::$app->getRequest()->getIsConsoleRequest()) {
+		Craft::$app->onInit(function() {
+			if (!Craft::$app->getRequest()->getIsConsoleRequest()) {
 				/** @var HtmlDumper $dumper */
 				$dumper = Craft::$app->getDumper();
 				$dumper->setTheme('dark');
 			}
-        });
-        Craft::$app->view->registerTwigExtension(new Extension());
-        Craft::$app->view->registerTwigExtension(new PhpSyntaxExtension());
-    }
+		});
+		Craft::$app->view->registerTwigExtension(new Extension());
+		Craft::$app->view->registerTwigExtension(new PhpSyntaxExtension());
+	}
 
-    private function attachEventHandlers(): void
-    {
-        Event::on(
+	private function attachEventHandlers(): void
+	{
+		Event::on(
 			View::class,
 			View::EVENT_BEFORE_RENDER_TEMPLATE,
 			static function (): void {
@@ -69,7 +72,7 @@ class Plugin extends BasePlugin
 			}
 		);
 
-        Event::on(
+		Event::on(
 			CraftVariable::class,
 			CraftVariable::EVENT_INIT,
 			static function (Event $event) {
@@ -79,7 +82,7 @@ class Plugin extends BasePlugin
 			}
 		);
 
-        Event::on(
+		Event::on(
 			View::class,
 			View::EVENT_REGISTER_SITE_TEMPLATE_ROOTS,
 			static function (RegisterTemplateRootsEvent $event): void {
@@ -94,5 +97,5 @@ class Plugin extends BasePlugin
 				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
 			}
 		);
-    }
+	}
 }

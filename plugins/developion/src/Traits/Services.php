@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Developion\SitePlugin\Traits;
 
-use Developion\SitePlugin\services\Bundles;
+use Developion\SitePlugin\Services\Bundles;
 
 /**
  * @mixin Plugin

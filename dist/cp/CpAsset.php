@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Developion\web\assets\cp;
+namespace Developion\SitePlugin\web\assets\cp;
 
-use Developion\web\assets\font\FontAsset;
+use Developion\SitePlugin\web\assets\font\FontAsset;
 use craft\web\AssetBundle;
 
 /**

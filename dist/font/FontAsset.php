@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Developion\web\assets\font;
+namespace Developion\SitePlugin\web\assets\font;
 
 use craft\web\AssetBundle;
 
