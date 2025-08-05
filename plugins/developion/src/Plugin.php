@@ -9,6 +9,7 @@ use Developion\SitePlugin\Web\Twig\Variable;
 use Craft;
 use yii\base\Event;
 use craft\base\Plugin as BasePlugin;
+use craft\events\RegisterTemplateRootsEvent;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
 use Developion\SitePlugin\Web\Twig\Extension;
@@ -39,7 +40,7 @@ class Plugin extends BasePlugin
 
     public function init(): void
     {   
-        Craft::setAlias('@SitePlugin', __DIR__);
+        Craft::setAlias('sitePlugin', __DIR__);
 
         parent::init();
 
@@ -75,6 +76,22 @@ class Plugin extends BasePlugin
 				/** @var CraftVariable $variable */
 				$variable = $event->sender;
 				$variable->set('sitePlugin', Variable::class);
+			}
+		);
+
+        Event::on(
+			View::class,
+			View::EVENT_REGISTER_SITE_TEMPLATE_ROOTS,
+			static function (RegisterTemplateRootsEvent $event): void {
+				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
+			}
+		);
+
+		Event::on(
+			View::class,
+			View::EVENT_REGISTER_CP_TEMPLATE_ROOTS,
+			static function (RegisterTemplateRootsEvent $event): void {
+				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
 			}
 		);
     }
