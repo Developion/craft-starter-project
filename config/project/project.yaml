@@ -74,10 +74,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  cr:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true
