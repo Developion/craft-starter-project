@@ -41,6 +41,7 @@
       "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\"",
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "composer install",
       "@php craft install"
     ],
     "phpstan": "phpstan --memory-limit=2G",
