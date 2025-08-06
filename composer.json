@@ -42,7 +42,8 @@
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"rename('composer.json.default', 'composer.json');\"",
       "composer install",
-      "@php craft install"
+      "@php craft install",
+      "@php craft up"
     ],
     "phpstan": "phpstan --memory-limit=2G",
 		"check-cs": "php-cs-fixer check --diff --ansi --using-cache=no",
