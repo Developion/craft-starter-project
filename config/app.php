@@ -21,7 +21,15 @@
  */
 
 use craft\helpers\App;
+use Psr\Log\LogLevel;
 
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+    'components' => [
+        'log' => [
+            'monologTargetConfig' => [
+                'level' => LogLevel::WARNING,
+            ]
+        ]
+    ]
 ];
