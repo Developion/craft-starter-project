@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace Developion\SitePlugin;
 
 use Craft;
+use craft\base\Element;
 use craft\base\Plugin as BasePlugin;
+use craft\events\DefineHtmlEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
@@ -95,6 +97,14 @@ class Plugin extends BasePlugin
 			View::EVENT_REGISTER_CP_TEMPLATE_ROOTS,
 			static function (RegisterTemplateRootsEvent $event): void {
 				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
+			}
+		);
+
+		Event::on(
+			Element::class,
+			Element::EVENT_DEFINE_SIDEBAR_HTML,
+			function (DefineHtmlEvent $event): void {
+				$event->html .= Craft::$app->getView()->renderTemplate('@_site-plugin/settings/collapseSidebar');
 			}
 		);
 	}
