@@ -1,4 +1,4 @@
-# 🚀 Developion Craft Starter Project
+# 🚀 Craft Starter Project
 
 This project provides a ready-to-use **DDEV environment**, **Craft CMS configuration**, and a **prebuilt content builder** to accelerate development across Craft-based projects.
 
@@ -40,7 +40,7 @@ ddev config --project-type=craftcms --docroot=web
 ddev start
 ```
 
-### 3. Create a new project from the Developion package
+### 3. Create a new project from the package
 
 ```bash
 composer create-project "developion/craft:dev-master"
