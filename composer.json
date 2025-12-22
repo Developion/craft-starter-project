@@ -1,54 +1,54 @@
 {
-  "name": "developion/craft",
-  "description": "A Craft CMS starter package",
-  "type": "project",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "license": "MIT",
-  "require": {
-    "developion/site-plugin": "^1.0.0",
-    "craftcms/ckeditor": "^4.9.0",
-    "craftcms/cms": "^5.0.0",
-    "nystudio107/craft-code-field": "^5.0.1",
-    "squirrelphp/twig-php-syntax": "^1.9",
-    "vlucas/phpdotenv": "^5.4.0"
-  },
-  "require-dev": {
-    "craftcms/generator": "^2.0.0",
-    "yiisoft/yii2-shell": "^2.0.3",
-    "marcusgaius/phpstan": "^1.0",
-    "friendsofphp/php-cs-fixer": "^3.54",
-    "developion/coding-standards": "^1.1"
-  },
-  "config": {
-    "allow-plugins": {
-      "craftcms/plugin-installer": true,
-      "yiisoft/yii2-composer": true
-    },
-    "sort-packages": true,
-    "optimize-autoloader": true,
-    "platform": {
-      "php": "8.2"
-    }
-  },
-  "autoload": {
-    "psr-4": {
-      "Developion\\SitePlugin\\web\\assets\\": "dist/"
-    }
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\"",
-      "@php -r \"unlink('composer.json');\"",
-      "@php -r \"rename('composer.json.default', 'composer.json');\"",
-      "composer install",
-      "@php craft install",
-      "@php craft up"
-    ],
-    "phpstan": "phpstan --memory-limit=2G",
+	"name": "developion/craft",
+	"description": "A Craft CMS starter package",
+	"type": "project",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"license": "MIT",
+	"require": {
+		"developion/site-plugin": "^1.0.0",
+		"craftcms/ckeditor": "^4.9.0",
+		"craftcms/cms": "^5.0.0",
+		"nystudio107/craft-code-field": "^5.0.1",
+		"squirrelphp/twig-php-syntax": "^1.9",
+		"vlucas/phpdotenv": "^5.4.0"
+	},
+	"require-dev": {
+		"craftcms/generator": "^2.0.0",
+		"yiisoft/yii2-shell": "^2.0.3",
+		"marcusgaius/phpstan": "^1.0",
+		"friendsofphp/php-cs-fixer": "^3.54",
+		"developion/coding-standards": "^1.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"craftcms/plugin-installer": true,
+			"yiisoft/yii2-composer": true
+		},
+		"sort-packages": true,
+		"optimize-autoloader": true,
+		"platform": {
+			"php": "8.2"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Developion\\SitePlugin\\web\\assets\\": "dist/"
+		}
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+			"@php -r \"unlink('composer.json');\"",
+			"@php -r \"rename('composer.json.default', 'composer.json');\"",
+			"composer install",
+			"@php craft install",
+			"@php craft up"
+		],
+		"phpstan": "phpstan --memory-limit=2G",
 		"check-cs": "php-cs-fixer check --diff --ansi --using-cache=no",
 		"fix-cs": "php-cs-fixer fix --diff --ansi --using-cache=no"
-  },
+	},
 	"repositories": [
 		{
 			"type": "path",

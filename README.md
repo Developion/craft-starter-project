@@ -16,10 +16,10 @@ You can install it directly from **Packagist** using Composer — cloning the Gi
 
 Before you begin, make sure you have:
 
-- [Docker](https://www.docker.com/)  
-- [DDEV](https://ddev.readthedocs.io/en/stable/)  
-- PHP ≥ 8.2  
-- Composer ≥ 2.x  
+- PHP ≥ 8.2
+- [Docker](https://www.docker.com/)
+- [DDEV](https://ddev.readthedocs.io/en/stable/)
+- [Composer ≥ 2.x](https://getcomposer.org/)
 
 ---
 
@@ -36,14 +36,13 @@ mkdir my-craft-site && cd my-craft-site
 ### 2. Configure DDEV for Craft CMS
 
 ```bash
-ddev config --project-type=craftcms --docroot=web
-ddev start
+ddev config --project-type=craftcms --docroot=web && ddev start
 ```
 
 ### 3. Create a new project from the package
 
 ```bash
-composer create-project "developion/craft:dev-master"
+ddev composer create-project "developion/craft:dev-master"
 ```
 
 > 💡 Always use the **Packagist package** instead of cloning the GitHub repository.

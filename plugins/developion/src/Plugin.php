@@ -83,29 +83,5 @@ class Plugin extends BasePlugin
 				$variable->set('sitePlugin', Variable::class);
 			}
 		);
-
-		Event::on(
-			View::class,
-			View::EVENT_REGISTER_SITE_TEMPLATE_ROOTS,
-			static function (RegisterTemplateRootsEvent $event): void {
-				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
-			}
-		);
-
-		Event::on(
-			View::class,
-			View::EVENT_REGISTER_CP_TEMPLATE_ROOTS,
-			static function (RegisterTemplateRootsEvent $event): void {
-				$event->roots['@_site-plugin'] = __DIR__ . '/Templates';
-			}
-		);
-
-		Event::on(
-			Element::class,
-			Element::EVENT_DEFINE_SIDEBAR_HTML,
-			function (DefineHtmlEvent $event): void {
-				$event->html .= Craft::$app->getView()->renderTemplate('@_site-plugin/settings/collapseSidebar');
-			}
-		);
 	}
 }

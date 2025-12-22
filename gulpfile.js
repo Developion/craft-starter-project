@@ -7,6 +7,7 @@ import autoprefixer from 'autoprefixer'
 import postcssImport from 'postcss-import'
 import postcssMixins from 'postcss-mixins'
 import cleanCSS from 'gulp-clean-css'
+
 const { src, dest, series, task, parallel, watch } = gulp
 
 const config = (file) => ({
@@ -16,7 +17,7 @@ const config = (file) => ({
 		postcssNested(),
 		autoprefixer()
 	]
-});
+})
 
 task('dev:css', () => {
 	return src('src/front/css/**/**/*.css')
@@ -37,11 +38,11 @@ task('build-prod:css', () => {
 	return src('src/front/css/**/*.css')
 		.pipe(postcss(config))
 		.pipe(postcss([autoprefixer(), postcssNested()]))
-		.pipe(cleanCSS({debug: true}))
+		.pipe(cleanCSS({ debug: true }))
 		.pipe(dest('dist/front/public/css'))
 })
 
-task("watch:css", () => {
+task('watch:css', () => {
 	return watch('src/front/css/**/**/*.css', series(['dev:css']))
 })
 
@@ -64,11 +65,11 @@ task('build-prod:global', () => {
 	return src('src/Global/**/*.css')
 		.pipe(postcss(config))
 		.pipe(postcss([autoprefixer(), postcssNested()]))
-		.pipe(cleanCSS({debug: true}))
+		.pipe(cleanCSS({ debug: true }))
 		.pipe(dest('dist/Global/public'))
 })
 
-task("watch:global", () => {
+task('watch:global', () => {
 	return watch('src/Global/**/**/*.css', series(['dev:global']))
 })
 

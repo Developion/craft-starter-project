@@ -27,7 +27,8 @@ class Extension extends AbstractExtension implements GlobalsInterface
 		return [
 			'frontAsset' => FrontAsset::class,
 			'fontAsset' => FontAsset::class,
-			'macros' => 'macros',
+			// allow macros if you add _macros in your root templates dir
+			// 'macros' => '_macros',
 		];
 	}
 
@@ -68,11 +69,11 @@ class Extension extends AbstractExtension implements GlobalsInterface
 			}),
 
 			new TwigFunction('editComponent', function (ElementInterface $node): string {
-				return Craft::$app->getView()->renderTemplate('components/util/componentEdit.twig', compact('node'));
+				return Craft::$app->getView()->renderTemplate('_components/util/componentEdit.twig', compact('node'));
 			}, ['is_safe' => ['html']]),
 
 			new TwigFunction('editElement', function (ElementInterface $element): string {
-				return Craft::$app->getView()->renderTemplate('components/util/elementEdit.twig', compact('element'));
+				return Craft::$app->getView()->renderTemplate('_components/util/elementEdit.twig', compact('element'));
 			}, ['is_safe' => ['html']]),
 		];
 	}

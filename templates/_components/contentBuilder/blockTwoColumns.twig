@@ -6,14 +6,14 @@
 
 <section class="two-columns-wrapper content-grid {{ skinClass }}">
 	<div class="two-columns-inner medium">
-		{{ include('components/common/rich-text', {
+		{{ include('_components/common/rich-text', {
 				content: node.heading,
 				additionalClass: 'heading'
 		}) }}
 		<div class="main-text-wrapper">
 			{% if node.leftText | length > 0 %}
 				<div class="left-text-wrapper">
-					{{ include('components/common/rich-text', {
+					{{ include('_components/common/rich-text', {
 						content: node.leftText,
 						additionalClass: 'text-content'
 					}) }}
@@ -21,7 +21,7 @@
 			{% endif %}
 			{% if node.rightText|length > 0 %}
 				<div class="right-text-wrapper">
-					{{ include('components/common/rich-text',  {
+					{{ include('_components/common/rich-text',  {
 						content: node.rightText,
 						additionalClass: 'text-content'
 					}) }}
